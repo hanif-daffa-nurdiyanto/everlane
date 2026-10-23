@@ -1,164 +1,72 @@
-:root {
-  --font-mono: 'Roboto Mono', monospace;
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: var(--font-work-sans);
+
+  --color-timberwolf: #e6ded8;
+  --color-red: #d0021b;
+  --color-everlane-100: #f5f4f4;
+  --color-everlane-200: #dddbdc;
+  --color-everlane-300: #737373;
+  --color-everlane-400: #4c4c4b;
+  --color-everlane-500: #262626;
 }
 
-* {
-  box-sizing: border-box;
-}
+@layer components {
+  .display-900 {
+    @apply font-sans text-[64px] font-normal leading-[72px] sm:text-[96px] sm:leading-[104px] lg:text-[128px] lg:leading-[136px] xl:text-[160px] xl:leading-44;
+  }
 
-html {
-  font-size: 18px;
-  line-height: 32px;
+  .display-800 {
+    @apply font-sans text-[44px] font-normal leading-[52px] tracking-[0.2px] sm:text-[56px] sm:leading-16 xl:text-[70px] xl:leading-21;
+  }
 
-  background: rgb(0, 0, 0);
-  -webkit-font-smoothing: antialiased;
-}
+  .display-700 {
+    @apply font-sans text-[40px] font-normal leading-12 sm:text-[52px] sm:leading-16 xl:text-[64px] xl:leading-18;
+  }
 
-html,
-body,
-#app {
-  height: 100%;
-}
+  .display-600 {
+    @apply font-sans text-[36px] font-normal leading-11 sm:text-[44px] sm:leading-14 xl:text-[54px] xl:leading-18;
+  }
 
-body {
-  font-family: system-ui;
-  font-size: 18px;
-  line-height: 32px;
+  .display-500 {
+    @apply font-sans text-[34px] font-normal leading-[42px] tracking-[0.68px] sm:text-[40px] sm:leading-12 sm:tracking-[0.8px] xl:text-[46px] xl:leading-[55.2px] xl:tracking-[0.92px];
+  }
 
-  margin: 0;
-  color: rgb(1000, 1000, 1000);
+  .display-400 {
+    @apply font-sans text-[30px] font-normal leading-[38px] tracking-[0.2px] sm:text-[34px] sm:leading-10 xl:text-[40px] xl:leading-12;
+  }
 
-  @media (max-width: 1024px) {
-    font-size: 15px;
-    line-height: 24px;
+  .display-300 {
+    @apply font-sans text-[30px] font-normal leading-10 tracking-[0.2px] sm:text-[34px] sm:leading-12 xl:text-[38px] xl:leading-[53.2px];
+  }
+
+  .display-200 {
+    @apply font-sans text-[26px] font-normal leading-[34px] sm:text-[29px] sm:leading-9 xl:text-[32px] xl:leading-10;
+  }
+
+  .display-100 {
+    @apply font-sans text-[20px] font-normal leading-7 sm:text-[22px] sm:leading-8 xl:text-[24px] xl:leading-[33.24px];
+  }
+
+  .text-400 {
+    @apply font-sans text-[16px] font-normal leading-6 tracking-[0.64px];
+  }
+
+  .text-300 {
+    @apply font-sans text-[14px] font-normal leading-[16.8px] tracking-[1.4px];
+  }
+
+  .text-200 {
+    @apply font-sans text-[12px] font-normal leading-4 tracking-[0.2px];
+  }
+
+  .text-100 {
+    @apply font-sans text-[12px] font-normal leading-4 tracking-[1px];
+  }
+
+  u {
+    @apply underline-offset-6
   }
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-h1 {
-  margin: 40px 0;
-  font-size: 64px;
-  line-height: 70px;
-  font-weight: bold;
-
-  @media (max-width: 1024px) {
-    margin: 24px 0;
-    font-size: 42px;
-    line-height: 42px;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 38px;
-    line-height: 38px;
-  }
-
-  @media (max-width: 400px) {
-    font-size: 32px;
-    line-height: 32px;
-  }
-}
-
-p {
-  margin: 24px 0;
-
-  @media (max-width: 1024px) {
-    margin: calc(var(--base) * 0.75) 0;
-  }
-}
-
-a {
-  color: currentColor;
-
-  &:focus {
-    opacity: 0.8;
-    outline: none;
-  }
-
-  &:active {
-    opacity: 0.7;
-    outline: none;
-  }
-}
-
-svg {
-  vertical-align: middle;
-}
-
-.home {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 100vh;
-  padding: 45px;
-  max-width: 1024px;
-  margin: 0 auto;
-  overflow: hidden;
-
-  @media (max-width: 400px) {
-    padding: 24px;
-  }
-
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-
-    h1 {
-      text-align: center;
-    }
-  }
-
-  .links {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    a {
-      text-decoration: none;
-      padding: 0.25rem 0.5rem;
-      border-radius: 4px;
-    }
-
-    .admin {
-      color: rgb(0, 0, 0);
-      background: rgb(1000, 1000, 1000);
-      border: 1px solid rgb(0, 0, 0);
-    }
-
-    .docs {
-      color: rgb(1000, 1000, 1000);
-      background: rgb(0, 0, 0);
-      border: 1px solid rgb(1000, 1000, 1000);
-    }
-  }
-
-  .footer {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    @media (max-width: 1024px) {
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    p {
-      margin: 0;
-    }
-
-    .codeLink {
-      text-decoration: none;
-      padding: 0 0.5rem;
-      background: rgb(60, 60, 60);
-      border-radius: 4px;
-    }
-  }
-}
