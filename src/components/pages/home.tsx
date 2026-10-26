@@ -22,8 +22,8 @@ const category = [
     image: '/images/pants.png',
   },
   {
-    title: 'sweayers',
-    image: '/images/sweayers.png',
+    title: 'sweaters',
+    image: '/images/sweaters.png',
   },
   {
     title: 'outwear',
